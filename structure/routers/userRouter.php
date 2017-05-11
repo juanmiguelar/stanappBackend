@@ -13,7 +13,6 @@
          if(isset($method)){
             echo $user->$method($request);
          }else{
-             
             echo $user->index(); 
          }
     }
