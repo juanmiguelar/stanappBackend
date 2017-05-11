@@ -27,6 +27,9 @@ $postdata = file_get_contents("php://input");
  $apellido = $request->apellido;
  $email = $request->email;
  
+
+    $sql ="INSERT INTO USUARIO(NOMBRE, APELLIDO, EMAIL) VALUES('" . $nombre . "', '" . $apellido . "', '". $email."')"; 
+   
     /*$array = insert($sql);
 	echo $array;*/
 }
@@ -45,15 +48,17 @@ function insert($query){
     }else{
         
         $result = $mysqli->query($query) or die($mysqli->error.__LINE__);
-       
-       
-        $arr = array();
-        if($result->num_rows > 0) {
-        	while($row = $result->fetch_assoc()) {
-        		$arr[] = $row;	
-        	}
+        if($result != null ){
+            echo "Se ha registrado con éxito!";
         }
-        echo $json_response = json_encode($arr);
+       
+        // $arr = array();
+        // if($result->num_rows > 0) {
+        // 	while($row = $result->fetch_assoc()) {
+        // 		$arr[] = $row;	
+        // 	}
+        // }
+        // echo $json_response = json_encode($arr);
     }
 }
 

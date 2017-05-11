@@ -1,5 +1,4 @@
 <?php
-
     require_once "connector.php";
 
     class User{
@@ -38,9 +37,6 @@
             
             return $this->con->simpleQuery($sql);
         }
-        
-        
-        
         
     }
 
