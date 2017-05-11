@@ -1,0 +1,66 @@
+[24-Apr-2017 16:52:44 UTC] PHP Warning:  require_once(models/userModel.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/structure/routers/userRouter.php on line 4
+[24-Apr-2017 16:52:44 UTC] PHP Stack trace:
+[24-Apr-2017 16:52:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[24-Apr-2017 16:52:44 UTC] PHP Fatal error:  require_once(): Failed opening required 'models/userModel.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/structure/routers/userRouter.php on line 4
+[24-Apr-2017 16:52:44 UTC] PHP Stack trace:
+[24-Apr-2017 16:52:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[24-Apr-2017 16:53:07 UTC] PHP Warning:  Missing argument 1 for User::__construct(), called in /home/ubuntu/workspace/structure/routers/userRouter.php on line 11 and defined in /home/ubuntu/workspace/structure/models/userModel.php on line 13
+[24-Apr-2017 16:53:07 UTC] PHP Stack trace:
+[24-Apr-2017 16:53:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[24-Apr-2017 16:53:07 UTC] PHP   2. User->__construct() /home/ubuntu/workspace/structure/routers/userRouter.php:11
+[24-Apr-2017 16:53:07 UTC] PHP Warning:  Missing argument 2 for User::__construct(), called in /home/ubuntu/workspace/structure/routers/userRouter.php on line 11 and defined in /home/ubuntu/workspace/structure/models/userModel.php on line 13
+[24-Apr-2017 16:53:07 UTC] PHP Stack trace:
+[24-Apr-2017 16:53:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[24-Apr-2017 16:53:07 UTC] PHP   2. User->__construct() /home/ubuntu/workspace/structure/routers/userRouter.php:11
+[24-Apr-2017 16:53:07 UTC] PHP Warning:  Missing argument 3 for User::__construct(), called in /home/ubuntu/workspace/structure/routers/userRouter.php on line 11 and defined in /home/ubuntu/workspace/structure/models/userModel.php on line 13
+[24-Apr-2017 16:53:07 UTC] PHP Stack trace:
+[24-Apr-2017 16:53:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[24-Apr-2017 16:53:07 UTC] PHP   2. User->__construct() /home/ubuntu/workspace/structure/routers/userRouter.php:11
+[24-Apr-2017 16:53:07 UTC] PHP Warning:  Missing argument 4 for User::__construct(), called in /home/ubuntu/workspace/structure/routers/userRouter.php on line 11 and defined in /home/ubuntu/workspace/structure/models/userModel.php on line 13
+[24-Apr-2017 16:53:07 UTC] PHP Stack trace:
+[24-Apr-2017 16:53:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[24-Apr-2017 16:53:07 UTC] PHP   2. User->__construct() /home/ubuntu/workspace/structure/routers/userRouter.php:11
+[24-Apr-2017 16:53:07 UTC] PHP Fatal error:  Method name must be a string in /home/ubuntu/workspace/structure/routers/userRouter.php on line 12
+[24-Apr-2017 16:53:07 UTC] PHP Stack trace:
+[24-Apr-2017 16:53:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[24-Apr-2017 16:55:21 UTC] PHP Fatal error:  Method name must be a string in /home/ubuntu/workspace/structure/routers/userRouter.php on line 12
+[24-Apr-2017 16:55:21 UTC] PHP Stack trace:
+[24-Apr-2017 16:55:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[24-Apr-2017 17:04:45 UTC] PHP Fatal error:  Call to a member function simpleQuery() on a non-object in /home/ubuntu/workspace/structure/models/userModel.php on line 34
+[24-Apr-2017 17:04:45 UTC] PHP Stack trace:
+[24-Apr-2017 17:04:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[24-Apr-2017 17:04:45 UTC] PHP   2. User->add() /home/ubuntu/workspace/structure/routers/userRouter.php:12
+[24-Apr-2017 17:19:23 UTC] PHP Fatal error:  Call to a member function index() on a non-object in /home/ubuntu/workspace/structure/routers/userRouter.php on line 15
+[24-Apr-2017 17:19:23 UTC] PHP Stack trace:
+[24-Apr-2017 17:19:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[24-Apr-2017 17:20:13 UTC] PHP Fatal error:  Call to a member function index() on a non-object in /home/ubuntu/workspace/structure/routers/userRouter.php on line 15
+[24-Apr-2017 17:20:13 UTC] PHP Stack trace:
+[24-Apr-2017 17:20:13 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[24-Apr-2017 17:28:01 UTC] PHP Fatal error:  Call to a member function simpleQuery() on a non-object in /home/ubuntu/workspace/structure/models/userModel.php on line 38
+[24-Apr-2017 17:28:01 UTC] PHP Stack trace:
+[24-Apr-2017 17:28:01 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[24-Apr-2017 17:28:01 UTC] PHP   2. User->add() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[24-Apr-2017 17:31:07 UTC] PHP Fatal error:  Call to a member function simpleQuery() on a non-object in /home/ubuntu/workspace/structure/models/userModel.php on line 38
+[24-Apr-2017 17:31:07 UTC] PHP Stack trace:
+[24-Apr-2017 17:31:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[24-Apr-2017 17:31:07 UTC] PHP   2. User->add() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[24-Apr-2017 17:33:11 UTC] PHP Fatal error:  Call to a member function runQuery() on a non-object in /home/ubuntu/workspace/structure/models/userModel.php on line 28
+[24-Apr-2017 17:33:11 UTC] PHP Stack trace:
+[24-Apr-2017 17:33:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[24-Apr-2017 17:33:11 UTC] PHP   2. User->index() /home/ubuntu/workspace/structure/routers/userRouter.php:17
+[24-Apr-2017 17:34:38 UTC] PHP Warning:  mysqli_query() expects at least 2 parameters, 1 given in /home/ubuntu/workspace/structure/models/connector.php on line 36
+[24-Apr-2017 17:34:38 UTC] PHP Stack trace:
+[24-Apr-2017 17:34:38 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[24-Apr-2017 17:34:38 UTC] PHP   2. User->index() /home/ubuntu/workspace/structure/routers/userRouter.php:17
+[24-Apr-2017 17:34:38 UTC] PHP   3. Connector->runQuery() /home/ubuntu/workspace/structure/models/userModel.php:28
+[24-Apr-2017 17:34:38 UTC] PHP   4. mysqli_query() /home/ubuntu/workspace/structure/models/connector.php:36
+[24-Apr-2017 17:34:38 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/ubuntu/workspace/structure/models/connector.php on line 37
+[24-Apr-2017 17:34:38 UTC] PHP Stack trace:
+[24-Apr-2017 17:34:38 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[24-Apr-2017 17:34:38 UTC] PHP   2. User->index() /home/ubuntu/workspace/structure/routers/userRouter.php:17
+[24-Apr-2017 17:34:38 UTC] PHP   3. Connector->runQuery() /home/ubuntu/workspace/structure/models/userModel.php:28
+[24-Apr-2017 17:34:38 UTC] PHP   4. mysqli_fetch_assoc() /home/ubuntu/workspace/structure/models/connector.php:37
+[24-Apr-2017 17:36:21 UTC] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home/ubuntu/workspace/structure/models/userModel.php on line 30
+[24-Apr-2017 17:36:21 UTC] PHP Stack trace:
+[24-Apr-2017 17:36:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[24-Apr-2017 17:36:21 UTC] PHP   2. User->index() /home/ubuntu/workspace/structure/routers/userRouter.php:17
