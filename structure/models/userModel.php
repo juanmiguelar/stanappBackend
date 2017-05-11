@@ -2,10 +2,11 @@
     require_once "connector.php";
 
     class User{
-        private $id;
-        private $name;
-        private $lastName;
-        private $email;
+        private $correo;
+        private $contrasenna;
+        private $nombre;
+        private $telefono;
+        private $tipo;
         
         private $con;
         
@@ -29,11 +30,13 @@
         
         function add($request){
             
-            $this->name = $request->nombre;
-            $this->lastName = $request->apellido;
-            $this->email = $request->email;
+            $this->correo = $request->correo;
+            $this->contrasenna = $request->contrasenna;
+            $this->nombre = $request->nombre;
+            $this->telefono = $request->telefono;
+            $this->tipo = $request->tipo;
             
-            $sql ="INSERT INTO USUARIO(NOMBRE, APELLIDO, EMAIL) VALUES('" . $this->name . "', '" . $this->lastName . "', '". $this->email ."')"; 
+            $sql ="INSERT INTO USUARIO(CORREO, CONTRASENNA, NOMBRE, TELEFONO, TIPO) VALUES('" . $this->correo . "', '" . $this->contrasenna . "', '". $this->nombre . "', '" . $this->telefono . "', '" . $this->tipo . "')"; 
             
             return $this->con->simpleQuery($sql);
         }
