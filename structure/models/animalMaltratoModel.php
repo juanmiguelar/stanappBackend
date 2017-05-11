@@ -1,10 +1,9 @@
 <?php
     require_once "connector.php";
 
-    class Direccion{
-        private $idDireccion;
-        private $latitud;
-        private $longitud;
+    class AnimalMaltrato{
+        private $especieMaltrato;
+        private $raza;
         
         private $con;
         
@@ -28,10 +27,10 @@
         
         function add($request){
             
-            $this->latitud = $request->latitud;
-            $this->longitud = $request->longitud;
+            $this->especieMaltrato = $request->especieMaltrato;
+            $this->raza = $request->raza;
             
-            $sql ="INSERT INTO DIRECCION(LATITUD, LONGITUD) VALUES('". $this->latitud . "', '". $this->longitud . "')"; 
+            $sql ="INSERT INTO ANIMAL_MALTRATO(ESPECIE_MALTRATO, RAZA) VALUES('". $this->especieMaltrato . "', '". $this->raza . "')"; 
             
             return $this->con->simpleQuery($sql);
         }
