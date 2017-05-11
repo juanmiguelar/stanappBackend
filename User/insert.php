@@ -23,12 +23,12 @@
 $postdata = file_get_contents("php://input");
  if (isset($postdata)) {
  $request = json_decode($postdata);
- $nombre = $request->nombre;
- $apellido = $request->apellido;
  $email = $request->email;
+ $contrasenna = $request->contrasenna;
+ $nombre = $request->nombre;
  
 
-    $sql ="INSERT INTO USUARIO(NOMBRE, APELLIDO, EMAIL) VALUES('" . $nombre . "', '" . $apellido . "', '". $email."')"; 
+    $sql ="INSERT INTO USUARIO(CORREO, CONTRASENNA, NOMBRE) VALUES('" . $email . "', '" . $contrasenna . "', '". $nombre."')"; 
    
     /*$array = insert($sql);
 	echo $array;*/
@@ -44,12 +44,16 @@ function insert($query){
     
     if ($mysqli->connect_error) {
         echo "Falló la conexión: %s\n", $mysqli->connect_error;
+        
         exit();
     }else{
         
         $result = $mysqli->query($query) or die($mysqli->error.__LINE__);
+        
         if($result != null ){
-            echo "Se ha registrado con éxito!";
+            echo $json_response = json_encode("Se ha registrado con éxito!") ;
+        }else{
+            echo $json_response = json_encode("Error en la query") ;
         }
        
         // $arr = array();
