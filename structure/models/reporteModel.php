@@ -39,14 +39,15 @@
             $this->correo = $request->correo;
             $this->idDireccion =$request->idDireccion;
             $this->especieMaltrato = $request->especieMaltrato;
-            $this->especieAdopcion =$request->especieAdopcion;
+            $this->especieAdopcion = $request->especieAdopcion;
             $this->titulo = $request->titulo;
             $this->descripcion = $request->descripcion;
             $this->tipo = $request->tipo;
             $this->estado = $request->estado;
             
             
-            $sql ="INSERT INTO USUARIO(CORREO, CONTRASENNA, NOMBRE, TELEFONO, TIPO) VALUES('" . $this->correo . "', '" . $this->contrasenna . "', '". $this->nombre . "', '" . $this->telefono . "', '" . $this->tipo . "')"; 
+            $sql ="INSERT INTO REPORTE(CORREO, ID_DIRECCION, ESPECIE_MALTRATO, ESPECIE_ADOPCION, TITULO, DESCRIPCION, TIPO, ESTADO)" 
+            . " VALUES('" . $this->correo . "', '" . $this->idDireccion . "', '". $this->especieMaltrato . "', '" . $this->especieAdopcion . "', '" . $this->titulo . "', '" . $this->descripcion . "', '" . $this->estado . "')"; 
             
             return $this->con->simpleQuery($sql);
         }
