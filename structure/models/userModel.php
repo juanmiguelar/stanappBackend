@@ -33,12 +33,14 @@
             $this->correo = $request->correo;
             $this->contrasenna = $request->contrasenna;
             $this->nombre = $request->nombre;
-            $this->telefono = $request->telefono;
-            $this->tipo = $request->tipo;
             
-            $sql ="INSERT INTO USUARIO(CORREO, CONTRASENNA, NOMBRE, TELEFONO, TIPO) VALUES('" . $this->correo . "', '" . $this->contrasenna . "', '". $this->nombre . "', '" . $this->telefono . "', '" . $this->tipo . "')"; 
+            $sql ="INSERT INTO USUARIO(CORREO, CONTRASENNA, NOMBRE) VALUES('" . $this->correo . "', '" . $this->contrasenna . "', '". $this->nombre . "')"; 
             
-            return $this->con->simpleQuery($sql);
+            if($this->con->simpleQuery($sql)){
+                 echo $json_response = json_encode("Se ha registrado con éxito");
+            }else{
+                 echo $json_response = json_encode("Error");
+            }
         }
         
     }

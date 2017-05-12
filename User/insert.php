@@ -30,8 +30,8 @@ $postdata = file_get_contents("php://input");
 
     $sql ="INSERT INTO USUARIO(CORREO, CONTRASENNA, NOMBRE) VALUES('" . $email . "', '" . $contrasenna . "', '". $nombre."')"; 
    
-    /*$array = insert($sql);
-	echo $array;*/
+    $array = insert($sql);
+
 }
 function insert($query){
     
@@ -51,9 +51,9 @@ function insert($query){
         $result = $mysqli->query($query) or die($mysqli->error.__LINE__);
         
         if($result != null ){
-            echo $json_response = json_encode("Se ha registrado con éxito!") ;
+           echo $json_response = json_encode("hola2222a");
         }else{
-            echo $json_response = json_encode("Error en la query") ;
+            echo $json_response = json_encode("holaa");
         }
        
         // $arr = array();
