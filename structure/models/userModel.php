@@ -43,18 +43,6 @@
                  echo $json_response = json_encode("false");
             }
         }
-        
-         function validarCorreo($request){
-            
-            $this->correo = $request->correo;
-            
-            $sql ="SELECT CORREO FROM USUARIO WHERE CORREO= '" . $this->correo . "' "; 
-            
-            $response = $this->con->complexQuery($sql);
-            
-           
-            echo $json_response = json_encode($response);
-            
-        }
+       
     }
 ?>
