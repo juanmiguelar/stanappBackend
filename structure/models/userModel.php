@@ -37,12 +37,24 @@
             $sql ="INSERT INTO USUARIO(CORREO, CONTRASENNA, NOMBRE) VALUES('" . $this->correo . "', '" . $this->contrasenna . "', '". $this->nombre . "')"; 
             
             if($this->con->simpleQuery($sql)){
-                 echo $json_response = json_encode("Se ha registrado con éxito");
+               
+                 echo $json_response = json_encode("true");
             }else{
-                 echo $json_response = json_encode("Error");
+                 echo $json_response = json_encode("false");
             }
         }
         
+         function validarCorreo($request){
+            
+            $this->correo = $request->correo;
+            
+            $sql ="SELECT CORREO FROM USUARIO WHERE CORREO= '" . $this->correo . "' "; 
+            
+            $response = $this->con->complexQuery($sql);
+            
+           
+            echo $json_response = json_encode($response);
+            
+        }
     }
-
 ?>

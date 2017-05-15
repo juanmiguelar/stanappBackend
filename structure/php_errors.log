@@ -64,3 +64,9 @@
 [24-Apr-2017 17:36:21 UTC] PHP Stack trace:
 [24-Apr-2017 17:36:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
 [24-Apr-2017 17:36:21 UTC] PHP   2. User->index() /home/ubuntu/workspace/structure/routers/userRouter.php:17
+[15-May-2017 22:25:57 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in /home/ubuntu/workspace/structure/models/connector.php on line 30
+[15-May-2017 22:25:57 UTC] PHP Stack trace:
+[15-May-2017 22:25:57 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[15-May-2017 22:25:57 UTC] PHP   2. User->validarCorreo() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[15-May-2017 22:25:57 UTC] PHP   3. Connector->complexQuery() /home/ubuntu/workspace/structure/models/userModel.php:53
+[15-May-2017 22:25:57 UTC] PHP   4. mysqli_error() /home/ubuntu/workspace/structure/models/connector.php:30
