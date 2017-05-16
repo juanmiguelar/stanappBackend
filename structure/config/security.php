@@ -23,6 +23,4 @@ class NapSecure{
 // $de = $nap->decryptIt($en);
 
 // echo $en . '<br/>' . $de;
-
-
 ?>
