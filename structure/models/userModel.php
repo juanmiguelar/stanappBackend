@@ -43,6 +43,19 @@
                  echo $json_response = json_encode("false");
             }
         }
+        
+        function validarUsuario($request){
+            
+            $this->correo = $request->email;
+            $this->contrasenna = $request->password;
+            echo $json_response = json_encode($this->correo);
+            // if($this->con->complexQuery($sql)){
+               
+            //      echo $json_response = json_encode("true");
+            // }else{
+            //      echo $json_response = json_encode("false");
+            // }
+        }
        
     }
 ?>
