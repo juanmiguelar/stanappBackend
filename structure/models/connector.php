@@ -24,12 +24,17 @@
         }
         
         public function complexQuery($sql){
+            $myArray = array();
             $datos = $this->con->query($sql);
             if ($datos === FALSE) {
                 echo "Error";
                 die(mysqli_error());
             }
-            return $datos;
+            
+            while($row = $datos->fetch_array(MYSQL_ASSOC)) {
+                    $myArray[] = $row;
+            }
+            return $myArray;
         }
         
         

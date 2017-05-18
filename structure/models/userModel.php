@@ -48,10 +48,17 @@
             
             $this->correo = $request->email;
             $this->contrasenna = $request->password;
-            echo $json_response = json_encode($this->correo);
+            $sql ="SELECT COUNT(CONTRASENNA) as CONTRASENNA  FROM USUARIO WHERE CORREO='" . $this->correo . "' AND CONTRASENNA='" . $this->contrasenna . "'"; 
+            
+            echo $json_response = json_encode($sql);
+            
+            // $usuario = $this->con->complexQuery($sql);
+            
+            // echo $json_response = json_encode($usuario);
+            
             // if($this->con->complexQuery($sql)){
                
-            //      echo $json_response = json_encode("true");
+            //     echo $json_response = json_encode($usuario[0]);
             // }else{
             //      echo $json_response = json_encode("false");
             // }

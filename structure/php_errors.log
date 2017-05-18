@@ -70,3 +70,46 @@
 [15-May-2017 22:25:57 UTC] PHP   2. User->validarCorreo() /home/ubuntu/workspace/structure/routers/userRouter.php:14
 [15-May-2017 22:25:57 UTC] PHP   3. Connector->complexQuery() /home/ubuntu/workspace/structure/models/userModel.php:53
 [15-May-2017 22:25:57 UTC] PHP   4. mysqli_error() /home/ubuntu/workspace/structure/models/connector.php:30
+[18-May-2017 14:45:45 UTC] PHP Warning:  mysqli::query(): Empty query in /home/ubuntu/workspace/structure/models/connector.php on line 27
+[18-May-2017 14:45:45 UTC] PHP Stack trace:
+[18-May-2017 14:45:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[18-May-2017 14:45:45 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[18-May-2017 14:45:45 UTC] PHP   3. Connector->complexQuery() /home/ubuntu/workspace/structure/models/userModel.php:52
+[18-May-2017 14:45:45 UTC] PHP   4. mysqli->query() /home/ubuntu/workspace/structure/models/connector.php:27
+[18-May-2017 14:45:45 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in /home/ubuntu/workspace/structure/models/connector.php on line 30
+[18-May-2017 14:45:45 UTC] PHP Stack trace:
+[18-May-2017 14:45:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[18-May-2017 14:45:45 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[18-May-2017 14:45:45 UTC] PHP   3. Connector->complexQuery() /home/ubuntu/workspace/structure/models/userModel.php:52
+[18-May-2017 14:45:45 UTC] PHP   4. mysqli_error() /home/ubuntu/workspace/structure/models/connector.php:30
+[18-May-2017 15:46:15 UTC] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home/ubuntu/workspace/structure/models/userModel.php on line 55
+[18-May-2017 15:46:15 UTC] PHP Stack trace:
+[18-May-2017 15:46:15 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[18-May-2017 15:46:15 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[18-May-2017 15:48:36 UTC] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home/ubuntu/workspace/structure/models/userModel.php on line 55
+[18-May-2017 15:48:36 UTC] PHP Stack trace:
+[18-May-2017 15:48:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[18-May-2017 15:48:36 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[18-May-2017 15:49:37 UTC] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/ubuntu/workspace/structure/models/userModel.php on line 55
+[18-May-2017 15:49:37 UTC] PHP Stack trace:
+[18-May-2017 15:49:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[18-May-2017 15:49:37 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[18-May-2017 15:51:41 UTC] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/ubuntu/workspace/structure/models/userModel.php on line 55
+[18-May-2017 15:51:41 UTC] PHP Stack trace:
+[18-May-2017 15:51:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[18-May-2017 15:51:41 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[18-May-2017 15:54:54 UTC] PHP Fatal error:  Cannot use [] for reading in /home/ubuntu/workspace/structure/models/userModel.php on line 55
+[18-May-2017 15:54:54 UTC] PHP Stack trace:
+[18-May-2017 15:54:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[18-May-2017 16:06:52 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in /home/ubuntu/workspace/structure/models/connector.php on line 31
+[18-May-2017 16:06:52 UTC] PHP Stack trace:
+[18-May-2017 16:06:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[18-May-2017 16:06:52 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[18-May-2017 16:06:52 UTC] PHP   3. Connector->complexQuery() /home/ubuntu/workspace/structure/models/userModel.php:53
+[18-May-2017 16:06:52 UTC] PHP   4. mysqli_error() /home/ubuntu/workspace/structure/models/connector.php:31
+[18-May-2017 16:06:52 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in /home/ubuntu/workspace/structure/models/connector.php on line 31
+[18-May-2017 16:06:52 UTC] PHP Stack trace:
+[18-May-2017 16:06:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[18-May-2017 16:06:52 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[18-May-2017 16:06:52 UTC] PHP   3. Connector->complexQuery() /home/ubuntu/workspace/structure/models/userModel.php:53
+[18-May-2017 16:06:52 UTC] PHP   4. mysqli_error() /home/ubuntu/workspace/structure/models/connector.php:31
