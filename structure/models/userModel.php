@@ -46,15 +46,14 @@
         
         function validarUsuario($request){
             
+            
             $this->correo = $request->email;
             $this->contrasenna = $request->password;
             $sql ="SELECT COUNT(CONTRASENNA) as CONTRASENNA  FROM USUARIO WHERE CORREO='" . $this->correo . "' AND CONTRASENNA='" . $this->contrasenna . "'"; 
             
+            $usuario = $this->con->complexQuery($sql);
+            
             echo $json_response = json_encode($sql);
-            
-            // $usuario = $this->con->complexQuery($sql);
-            
-            // echo $json_response = json_encode($usuario);
             
             // if($this->con->complexQuery($sql)){
                
