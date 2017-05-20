@@ -1,5 +1,6 @@
 <?php
     require_once "connector.php";
+    require_once "security.php";
 
     class User{
         private $correo;
@@ -7,12 +8,13 @@
         private $nombre;
         private $telefono;
         private $tipo;
-        
+        private $nap;
         private $con;
         
         // Los constructores no se pueden sobrecargar
         function __construct(){
             $this->con = new Connector();
+            $this->nap = new NapSecure();
         }
         
         function set($var, $value){
@@ -34,7 +36,9 @@
             $this->contrasenna = $request->contrasenna;
             $this->nombre = $request->nombre;
             
-            $sql ="INSERT INTO USUARIO(CORREO, CONTRASENNA, NOMBRE) VALUES('" . $this->correo . "', '" . $this->contrasenna . "', '". $this->nombre . "')"; 
+            $pass_encryp =  $this->nap->encryptIt($this->contrasenna);
+            
+            $sql ="INSERT INTO USUARIO(CORREO, CONTRASENNA, NOMBRE) VALUES('" . $this->correo . "', '" . $pass_encryp . "', '". $this->nombre . "')"; 
             
             if($this->con->simpleQuery($sql)){
                
@@ -46,18 +50,25 @@
         
         function validarUsuario($request){
             
-            
             $this->correo = $request->email;
             $this->contrasenna = $request->password;
-            $sql ="SELECT COUNT(CONTRASENNA) as CONTRASENNA  FROM USUARIO WHERE CORREO='" . $this->correo . "' AND CONTRASENNA='" . $this->contrasenna . "'"; 
+            
+            
+            $sql ="SELECT COUNT(CONTRASENNA) as CONTRASENNA FROM USUARIO WHERE CORREO='" . $this->correo . "' AND CONTRASENNA='" . $this->contrasenna . "'"; 
             
             $usuario = $this->con->complexQuery($sql);
             
-            echo $json_response = json_encode($sql);
+            echo $json_response = json_encode($contrasenna);
+            
+            // if($usuario[0]["CONTRASENNA"] = 1){
+            //     echo $json_response = json_encode("1");
+            // }else{
+            //     echo $json_response = json_encode("0");
+            // }
             
             // if($this->con->complexQuery($sql)){
                
-            //     echo $json_response = json_encode($usuario[0]);
+            //      echo $json_response = json_encode("true");
             // }else{
             //      echo $json_response = json_encode("false");
             // }
