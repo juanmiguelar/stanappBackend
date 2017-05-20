@@ -284,3 +284,6 @@
 [20-May-2017 03:33:50 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
 [20-May-2017 03:33:50 UTC] PHP   3. Connector->complexQuery() /home/ubuntu/workspace/structure/models/userModel.php:71
 [20-May-2017 03:33:50 UTC] PHP   4. mysqli_error() /home/ubuntu/workspace/structure/models/connector.php:31
+[20-May-2017 04:05:42 UTC] PHP Fatal error:  Call to a member function decryptIt() on a non-object in /home/ubuntu/workspace/structure/models/security.php on line 23
+[20-May-2017 04:05:42 UTC] PHP Stack trace:
+[20-May-2017 04:05:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/models/security.php:0
