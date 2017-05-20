@@ -220,3 +220,67 @@
 [20-May-2017 01:41:51 UTC] PHP Stack trace:
 [20-May-2017 01:41:51 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
 [20-May-2017 01:41:51 UTC] PHP   2. require_once() /home/ubuntu/workspace/structure/routers/userRouter.php:4
+[20-May-2017 02:04:44 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in /home/ubuntu/workspace/structure/models/connector.php on line 31
+[20-May-2017 02:04:44 UTC] PHP Stack trace:
+[20-May-2017 02:04:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[20-May-2017 02:04:44 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[20-May-2017 02:04:44 UTC] PHP   3. Connector->complexQuery() /home/ubuntu/workspace/structure/models/userModel.php:61
+[20-May-2017 02:04:44 UTC] PHP   4. mysqli_error() /home/ubuntu/workspace/structure/models/connector.php:31
+[20-May-2017 02:18:14 UTC] PHP Warning:  base64_decode() expects parameter 1 to be string, array given in /home/ubuntu/workspace/structure/models/security.php on line 14
+[20-May-2017 02:18:14 UTC] PHP Stack trace:
+[20-May-2017 02:18:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[20-May-2017 02:18:14 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[20-May-2017 02:18:14 UTC] PHP   3. NapSecure->decryptIt() /home/ubuntu/workspace/structure/models/userModel.php:60
+[20-May-2017 02:18:14 UTC] PHP   4. base64_decode() /home/ubuntu/workspace/structure/models/security.php:14
+[20-May-2017 02:19:39 UTC] PHP Warning:  base64_decode() expects parameter 1 to be string, array given in /home/ubuntu/workspace/structure/models/security.php on line 14
+[20-May-2017 02:19:39 UTC] PHP Stack trace:
+[20-May-2017 02:19:39 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[20-May-2017 02:19:39 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[20-May-2017 02:19:39 UTC] PHP   3. NapSecure->decryptIt() /home/ubuntu/workspace/structure/models/userModel.php:60
+[20-May-2017 02:19:39 UTC] PHP   4. base64_decode() /home/ubuntu/workspace/structure/models/security.php:14
+[20-May-2017 02:26:17 UTC] PHP Warning:  Illegal string offset 'CONTRASENNA' in /home/ubuntu/workspace/structure/models/userModel.php on line 60
+[20-May-2017 02:26:17 UTC] PHP Stack trace:
+[20-May-2017 02:26:17 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[20-May-2017 02:26:17 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[20-May-2017 02:26:19 UTC] PHP Warning:  Illegal string offset 'CONTRASENNA' in /home/ubuntu/workspace/structure/models/userModel.php on line 60
+[20-May-2017 02:26:19 UTC] PHP Stack trace:
+[20-May-2017 02:26:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[20-May-2017 02:26:19 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[20-May-2017 02:32:20 UTC] PHP Warning:  Illegal string offset 'CONTRASENNA' in /home/ubuntu/workspace/structure/models/userModel.php on line 60
+[20-May-2017 02:32:20 UTC] PHP Stack trace:
+[20-May-2017 02:32:20 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[20-May-2017 02:32:20 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[20-May-2017 02:32:48 UTC] PHP Warning:  Illegal string offset 'CONTRASENNA' in /home/ubuntu/workspace/structure/models/userModel.php on line 60
+[20-May-2017 02:32:48 UTC] PHP Stack trace:
+[20-May-2017 02:32:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[20-May-2017 02:32:48 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[20-May-2017 02:52:25 UTC] PHP Warning:  Illegal string offset 'CONTRASENNA' in /home/ubuntu/workspace/structure/models/userModel.php on line 63
+[20-May-2017 02:52:25 UTC] PHP Stack trace:
+[20-May-2017 02:52:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[20-May-2017 02:52:25 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[20-May-2017 02:56:05 UTC] PHP Warning:  Illegal string offset 'CONTRASENNA' in /home/ubuntu/workspace/structure/models/userModel.php on line 63
+[20-May-2017 02:56:05 UTC] PHP Stack trace:
+[20-May-2017 02:56:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[20-May-2017 02:56:05 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[20-May-2017 03:17:53 UTC] PHP Warning:  Illegal string offset 'CONTRASENNA' in /home/ubuntu/workspace/structure/models/userModel.php on line 63
+[20-May-2017 03:17:53 UTC] PHP Stack trace:
+[20-May-2017 03:17:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[20-May-2017 03:17:53 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[20-May-2017 03:23:09 UTC] PHP Warning:  Illegal string offset 'CONTRASENNA' in /home/ubuntu/workspace/structure/models/userModel.php on line 63
+[20-May-2017 03:23:09 UTC] PHP Stack trace:
+[20-May-2017 03:23:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[20-May-2017 03:23:09 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[20-May-2017 03:23:25 UTC] PHP Warning:  Illegal string offset 'CONTRASENNA' in /home/ubuntu/workspace/structure/models/userModel.php on line 63
+[20-May-2017 03:23:25 UTC] PHP Stack trace:
+[20-May-2017 03:23:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[20-May-2017 03:23:25 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[20-May-2017 03:27:04 UTC] PHP Warning:  Illegal string offset 'CONTRASENNA' in /home/ubuntu/workspace/structure/models/userModel.php on line 63
+[20-May-2017 03:27:04 UTC] PHP Stack trace:
+[20-May-2017 03:27:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[20-May-2017 03:27:04 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[20-May-2017 03:33:50 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in /home/ubuntu/workspace/structure/models/connector.php on line 31
+[20-May-2017 03:33:50 UTC] PHP Stack trace:
+[20-May-2017 03:33:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/userRouter.php:0
+[20-May-2017 03:33:50 UTC] PHP   2. User->validarUsuario() /home/ubuntu/workspace/structure/routers/userRouter.php:14
+[20-May-2017 03:33:50 UTC] PHP   3. Connector->complexQuery() /home/ubuntu/workspace/structure/models/userModel.php:71
+[20-May-2017 03:33:50 UTC] PHP   4. mysqli_error() /home/ubuntu/workspace/structure/models/connector.php:31

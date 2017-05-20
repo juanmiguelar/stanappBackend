@@ -52,26 +52,28 @@
             
             $this->correo = $request->email;
             $this->contrasenna = $request->password;
+            //Consultar la contrasena
+            $sql ="SELECT CONTRASENNA FROM USUARIO WHERE CORREO= '" . $this->correo . "' "; 
+            $pass = $this->con->complexQuery($sql);
             
+            //Quitar "" y desencriptar
+            $pass= str_replace('""','', $pass[0]["CONTRASENNA"]);
+            $pass_decryp =  $this->nap->decryptIt($pass);
             
-            $sql ="SELECT COUNT(CONTRASENNA) as CONTRASENNA FROM USUARIO WHERE CORREO='" . $this->correo . "' AND CONTRASENNA='" . $this->contrasenna . "'"; 
+            //--Agregar esta linea para que funcione con esa contrasena por defecto
+            //$pass_decryp="7YA4vF+4Ux0Sk7sIuGa5J7vPg0DQon";
+           
+            echo $json_response = json_encode($pass_decryp);
+        
+                
+            // $sql ="SELECT COUNT(CONTRASENNA) as RESULTADO, CORREO FROM USUARIO WHERE CORREO='" . $this->correo . "' AND CONTRASENNA='" . $pass_decryp . "'"; 
             
-            $usuario = $this->con->complexQuery($sql);
+            // $usuario = $this->con->complexQuery($sql);
             
-            echo $json_response = json_encode($contrasenna);
+            // // echo $json_response = json_encode($usuario[0]);
             
-            // if($usuario[0]["CONTRASENNA"] = 1){
-            //     echo $json_response = json_encode("1");
-            // }else{
-            //     echo $json_response = json_encode("0");
-            // }
-            
-            // if($this->con->complexQuery($sql)){
-               
-            //      echo $json_response = json_encode("true");
-            // }else{
-            //      echo $json_response = json_encode("false");
-            // }
+            // echo $json_response = json_encode($usuario[0]);
+        
         }
        
     }
