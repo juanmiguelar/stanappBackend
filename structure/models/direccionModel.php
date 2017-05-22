@@ -33,7 +33,7 @@
             
             $sql ="INSERT INTO DIRECCION(LATITUD, LONGITUD) VALUES('". $this->latitud . "', '". $this->longitud . "')"; 
             
-            return $this->con->simpleQuery($sql);
+            echo $this->con->simpleQuery($sql);
         }
         
     }

@@ -353,3 +353,7 @@
 [22-May-2017 21:24:23 UTC] PHP   2. Reporte->index() /home/ubuntu/workspace/structure/routers/reportRouter.php:16
 [22-May-2017 21:24:23 UTC] PHP   3. Connector->complexQuery() /home/ubuntu/workspace/structure/models/reporteModel.php:32
 [22-May-2017 21:24:23 UTC] PHP   4. mysqli_error() /home/ubuntu/workspace/structure/models/connector.php:31
+[22-May-2017 22:24:38 UTC] PHP Catchable fatal error:  Object of class stdClass could not be converted to string in /home/ubuntu/workspace/structure/models/direccionModel.php on line 34
+[22-May-2017 22:24:38 UTC] PHP Stack trace:
+[22-May-2017 22:24:38 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/direccionRouter.php:0
+[22-May-2017 22:24:38 UTC] PHP   2. Direccion->add() /home/ubuntu/workspace/structure/routers/direccionRouter.php:14
