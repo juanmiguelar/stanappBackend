@@ -3,7 +3,7 @@
 
     class Reporte{
         
-        private $id;
+        private $idReporte;
         private $correo;
         private $idDireccion;
         private $especieMaltrato;
@@ -29,13 +29,13 @@
         }
         
         function index(){
-            $response = $this->con->complexQuery("SELECT NOW();");
-            echo print_r($response);
+            $response = $this->con->complexQuery("SELECT * FROM REPORTE;");
+            echo $response;
         }
         
         function add($request){
             
-            $this->id = $request->id;
+            $this->idReporte = $request->idReporte;
             $this->correo = $request->correo;
             $this->idDireccion =$request->idDireccion;
             $this->especieMaltrato = $request->especieMaltrato;

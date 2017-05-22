@@ -7,7 +7,7 @@
           "host" => "localhost",
           "user" => "juanmiguelar09",
           "pass" => "",
-          "db" => "db"
+          "db" => "db2"
         );
         
         public function __construct(){
