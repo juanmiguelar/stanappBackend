@@ -23,8 +23,10 @@
         }
         
         function index(){
-            $response = $this->con->complexQuery("SELECT NOW();");
-            echo print_r($response);
+            $this->raza='Gatos';
+            $sqlmax = "SELECT MAX(ID_ADOPCION) AS ID FROM ANIMAL_ADOPCION WHERE RAZA='". $this->raza . "'";
+            $response = $this->con->complexQuery($sqlmax);
+            echo print($sqlmax);
         }
         
         function add($request){
@@ -37,7 +39,18 @@
             $sql ="INSERT INTO ANIMAL_ADOPCION(ESPECIE_ADOPCION, RAZA, EDAD, TAMANNO) "
             . "VALUES('". $this->especieAdopcion . "', '". $this->raza . "', '" . $this->edad . "', '" . $this->tamanno . "')"; 
             
-            return $this->con->simpleQuery($sql);
+            $result = $this->con->simpleQuery($sql);
+            
+            if ($result) {
+                $sqlmax = "SELECT MAX(ID_ADOPCION) AS ID FROM ANIMAL_ADOPCION WHERE RAZA='". $this->raza . "'";
+                $idAdopcion = $this->con->complexQuery($sqlmax);;
+                $response =  ereg_replace("'", "\"", $idAdopcion[0]['ID']);
+                echo $response;
+            }else{
+                $response = -1;
+                echo $response;
+            }
+            
         }
         
     }

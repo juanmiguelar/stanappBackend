@@ -60,9 +60,7 @@
             $pass_decryp =  $this->nap->decryptIt($usuario[0]["CONTRASENNA"]);
             
             if($this->contrasenna == $pass_decryp){
-                
                 echo $usuario[0]["CORREO"];
-                
             }else{
                 echo null;
             }

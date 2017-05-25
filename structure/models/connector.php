@@ -16,11 +16,7 @@
         
         public function simpleQuery($sql){
             $result = $this->con->query($sql);
-            if(!$result){
-                return false;
-            }else{
-                return true;
-            }
+            return $result;
         }
         
         public function complexQuery($sql){
@@ -35,6 +31,34 @@
                     $myArray[] = $row;
             }
             return $myArray;
+        }
+        
+        public function simpleMultiQuery($sql){
+           $datos = $this->con->multi_query($sql);
+           
+            if ($datos == FALSE) {
+                echo "Error";
+                die(mysqli_error());
+            }
+            
+            
+            return $datos;
+            
+            // /* execute multi query */
+            // if ($mysqli->multi_query($sql)) {
+            //     do {
+            //         /* store first result set */
+            //         if ($result = $mysqli->store_result()) {
+            //             while ($row = $result->fetch_row()) {
+            //                 return $row[0];
+            //                 $result->free();
+            //                 /* close connection */
+            //                 $mysqli->close();
+            //             }
+            //         }
+            //     } while ($mysqli->next_result());
+            // }
+            
         }
         
         

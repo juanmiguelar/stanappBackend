@@ -31,10 +31,28 @@
             $this->latitud = $request->latitud;
             $this->longitud = $request->longitud;
             
-            $sql ="INSERT INTO DIRECCION(LATITUD, LONGITUD) VALUES('". $this->latitud . "', '". $this->longitud . "')"; 
+            //Se busca si la direccion ya existe
+            $sqlwhere="SELECT MAX(ID_DIRECCION) AS ID FROM DIRECCION WHERE LATITUD= " . $this->latitud . " AND LONGITUD= " . $this->longitud . " "; 
             
-            echo $this->con->simpleQuery($sql);
+            $result = $this->con->complexQuery($sqlwhere);
+            
+            $result = ereg_replace("'", "\"", $result[0]['ID']);  
+           
+            //Si existe se devuelve su ID
+            if($result != 0){
+                // Ya encontramos la dire
+                echo $result;
+            }//Sino se crea la direccion y se devuelve el ID de la nueva direccion 
+            else{
+                $sql ="INSERT INTO DIRECCION(LATITUD, LONGITUD) VALUES(". $this->latitud . ", ". $this->longitud . ");"; 
+                $result = $this->con->simpleQuery($sql);
+                $result = $this->con->complexQuery($sqlwhere);
+                
+                $result = ereg_replace("'", "\"", $result[0]['ID']);  
+                echo $result;
+            }
         }
+        
         
     }
 
