@@ -32,7 +32,17 @@
             
             $sql ="INSERT INTO ANIMAL_MALTRATO(ESPECIE_MALTRATO, RAZA) VALUES('". $this->especieMaltrato . "', '". $this->raza . "')"; 
             
-            return $this->con->simpleQuery($sql);
+            $result = $this->con->simpleQuery($sql);
+            
+            if ($result) {
+                $sqlmax = "SELECT MAX(ID_MALTRATO) AS ID FROM ANIMAL_MALTRATO";
+                $idMaltrato = $this->con->complexQuery($sqlmax);;
+                $response =  ereg_replace("'", "\"", $idMaltrato[0]['ID']);
+                echo $response;
+            }else{
+                $response = -1;
+                echo $response;
+            }
         }
         
     }

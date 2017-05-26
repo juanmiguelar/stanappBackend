@@ -52,6 +52,54 @@
             return $this->con->simpleQuery($sql);
         }
         
+        function addGeneralAdopcion($request){
+            
+            $this->titulo = $request->titulo;
+            $this->descripcion = $request->descripcion;
+            $this->id_direccion = $request->id_direccion;
+            $this->id_adopcion = $request->id_adopcion;
+            $this->correo = $request->correo;
+           
+            
+            $sql ="INSERT INTO REPORTE(CORREO,ID_DIRECCION,ID_ADOPCION,TITULO,DESCRIPCION) "
+            . "VALUES('". $this->correo . "', '". $this->id_direccion . "', '" . $this->id_adopcion . "', '" . $this->titulo . "', '" . $this->descripcion . "')"; 
+            
+            $result = $this->con->simpleQuery($sql);
+            
+            echo $result;
+            
+            // if ($result) {
+            //     echo $result
+            // }else{
+            //     echo $result
+            // }
+            
+        }
+        function addGeneralMaltrato($request){
+            
+            $this->titulo = $request->titulo;
+            $this->descripcion = $request->descripcion;
+            $this->id_direccion = $request->id_direccion;
+            $this->id_maltrato = $request->id_maltrato;
+            $this->correo = $request->correo;
+            $this->tipo = $request->tipo;
+           
+            
+            $sql ="INSERT INTO REPORTE(CORREO,ID_DIRECCION,ID_MALTRATO,TITULO,DESCRIPCION, TIPO) "
+            . "VALUES('". $this->correo . "', '". $this->id_direccion . "', '" . $this->id_maltrato . "', '" . $this->titulo . "', '" . $this->descripcion . "', '" . $this->tipo . "' )"; 
+            
+            $result = $this->con->simpleQuery($sql);
+            
+            echo $result;
+            
+            // if ($result) {
+            //     echo $result
+            // }else{
+            //     echo $result
+            // }
+            
+        }
+        
     }
 
 ?>

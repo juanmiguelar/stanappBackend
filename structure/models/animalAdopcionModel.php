@@ -6,6 +6,7 @@
         private $raza;
         private $edad;
         private $tamanno;
+        private $correo;
         
         private $con;
         
@@ -42,7 +43,7 @@
             $result = $this->con->simpleQuery($sql);
             
             if ($result) {
-                $sqlmax = "SELECT MAX(ID_ADOPCION) AS ID FROM ANIMAL_ADOPCION WHERE RAZA='". $this->raza . "'";
+                $sqlmax = "SELECT MAX(ID_ADOPCION) AS ID FROM ANIMAL_ADOPCION";
                 $idAdopcion = $this->con->complexQuery($sqlmax);;
                 $response =  ereg_replace("'", "\"", $idAdopcion[0]['ID']);
                 echo $response;
