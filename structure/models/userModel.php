@@ -53,16 +53,19 @@
             $this->correo = $request->email;
             $this->contrasenna = $request->password;
             //Consultar la contrasena
-            $sql ="SELECT CONTRASENNA, CORREO FROM USUARIO WHERE CORREO= '" . $this->correo . "' "; 
+            $sql ="SELECT COUNT(CORREO) AS CANTIDAD, CONTRASENNA, CORREO FROM USUARIO WHERE CORREO= '" . $this->correo . "' "; 
             $usuario = $this->con->complexQuery($sql);
             
             //Desencriptar
             $pass_decryp =  $this->nap->decryptIt($usuario[0]["CONTRASENNA"]);
             
+            
+            
             if($this->contrasenna == $pass_decryp){
-                echo $usuario[0]["CORREO"];
+                $usuario[0]["CONTRASENNA"] = 1;
+                echo $json_response = json_encode($usuario);
             }else{
-                echo null;
+                echo $json_response = json_encode($usuario);
             }
         }
     }

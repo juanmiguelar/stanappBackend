@@ -717,3 +717,21 @@
 [25-May-2017 22:59:50 UTC] PHP Fatal error:  Call to undefined method Reporte::addGeneralAdopcion() in /home/ubuntu/workspace/structure/routers/reportRouter.php on line 14
 [25-May-2017 22:59:50 UTC] PHP Stack trace:
 [25-May-2017 22:59:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/reportRouter.php:0
+[26-May-2017 01:22:31 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in /home/ubuntu/workspace/structure/models/connector.php on line 27
+[26-May-2017 01:22:31 UTC] PHP Stack trace:
+[26-May-2017 01:22:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/direccionRouter.php:0
+[26-May-2017 01:22:31 UTC] PHP   2. Direccion->add() /home/ubuntu/workspace/structure/routers/direccionRouter.php:14
+[26-May-2017 01:22:31 UTC] PHP   3. Connector->complexQuery() /home/ubuntu/workspace/structure/models/direccionModel.php:37
+[26-May-2017 01:22:31 UTC] PHP   4. mysqli_error() /home/ubuntu/workspace/structure/models/connector.php:27
+[26-May-2017 06:43:03 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in /home/ubuntu/workspace/structure/models/connector.php on line 27
+[26-May-2017 06:43:03 UTC] PHP Stack trace:
+[26-May-2017 06:43:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/direccionRouter.php:0
+[26-May-2017 06:43:03 UTC] PHP   2. Direccion->add() /home/ubuntu/workspace/structure/routers/direccionRouter.php:14
+[26-May-2017 06:43:03 UTC] PHP   3. Connector->complexQuery() /home/ubuntu/workspace/structure/models/direccionModel.php:37
+[26-May-2017 06:43:03 UTC] PHP   4. mysqli_error() /home/ubuntu/workspace/structure/models/connector.php:27
+[26-May-2017 07:25:24 UTC] PHP Warning:  mysqli_error() expects exactly 1 parameter, 0 given in /home/ubuntu/workspace/structure/models/connector.php on line 27
+[26-May-2017 07:25:24 UTC] PHP Stack trace:
+[26-May-2017 07:25:24 UTC] PHP   1. {main}() /home/ubuntu/workspace/structure/routers/direccionRouter.php:0
+[26-May-2017 07:25:24 UTC] PHP   2. Direccion->add() /home/ubuntu/workspace/structure/routers/direccionRouter.php:14
+[26-May-2017 07:25:24 UTC] PHP   3. Connector->complexQuery() /home/ubuntu/workspace/structure/models/direccionModel.php:37
+[26-May-2017 07:25:24 UTC] PHP   4. mysqli_error() /home/ubuntu/workspace/structure/models/connector.php:27
