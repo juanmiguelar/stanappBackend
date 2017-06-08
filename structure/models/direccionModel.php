@@ -22,8 +22,27 @@
         }
         
         function index(){
-            $response = $this->con->complexQuery("SELECT NOW();");
-            echo print_r($response);
+            $this->show();
+        }
+        
+        function show(){
+            $sql = "SELECT * FROM DIRECCION;";
+            $result = $this->con->complexQuery($sql);
+            
+            echo $json_response = json_encode($result);
+        }
+        
+        function getID($id){
+            
+            if (is_numeric($id)) {
+                // code...
+                $sql = "SELECT * FROM DIRECCION WHERE ID_DIRECCION=" . $id;
+                $result = $this->con->complexQuery($sql);
+                
+                echo $json_response = json_encode($result);
+            }else{
+                echo null;
+            }
         }
         
         function add($request){

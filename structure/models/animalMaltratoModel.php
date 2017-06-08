@@ -21,8 +21,27 @@
         }
         
         function index(){
-            $response = $this->con->complexQuery("SELECT NOW();");
-            echo print_r($response);
+            $this->show();
+        }
+        
+        function show(){
+            $sql = "SELECT * FROM ANIMAL_MALTRATO;";
+            $result = $this->con->complexQuery($sql);
+            
+            echo $json_response = json_encode($result);
+        }
+        
+        function getID($id){
+            
+            if (is_numeric($id)) {
+                // code...
+                $sql = "SELECT * FROM ANIMAL_MALTRATO WHERE ID_ANIMAL_MALTRATO=" . $id;
+                $result = $this->con->complexQuery($sql);
+                
+                echo $json_response = json_encode($result);
+            }else{
+                echo null;
+            }
         }
         
         function add($request){

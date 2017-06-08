@@ -29,8 +29,43 @@
         }
         
         function index(){
-            $response = $this->con->complexQuery("SELECT * FROM REPORTE;");
-            echo $response;
+            $this->show();
+        }
+        
+        function show(){
+            $sql = "SELECT * FROM REPORTE as R join DIRECCION as D ON R.ID_DIRECCION = D.ID_DIRECCION;";
+            $result = $this->con->complexQuery($sql);
+            
+            echo $json_response = json_encode($result);
+        }
+        
+        function getID($id){
+            
+            if (is_numeric($id)) {
+                // code...
+                $sql = "SELECT * FROM REPORTE as R join DIRECCION as D ON R.ID_DIRECCION = D.ID_DIRECCION WHERE R.ID_REPORTE=" . $id . ";";
+                $result = $this->con->complexQuery($sql);
+                
+                echo $json_response = json_encode($result);
+            }else{
+                echo null;
+            }
+        }
+        
+        // Obtener todos los reportes de maltratos
+        function getMaltratos(){
+            $sql = "SELECT * FROM REPORTE as R join DIRECCION as D ON R.ID_DIRECCION = D.ID_DIRECCION WHERE ID_MALTRATO IS NOT NULL;";
+            $result = $this->con->complexQuery($sql);
+            
+            echo $json_response = json_encode($result);
+        }
+        
+        // Obtener todos los reportes de adopción
+        function getAdopcion(){
+            $sql = "SELECT * FROM REPORTE as R join DIRECCION as D ON R.ID_DIRECCION = D.ID_DIRECCION WHERE ID_ADOPCION IS NOT NULL;";
+            $result = $this->con->complexQuery($sql);
+            
+            echo $json_response = json_encode($result);
         }
         
         function add($request){

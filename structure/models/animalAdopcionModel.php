@@ -24,10 +24,26 @@
         }
         
         function index(){
-            $this->raza='Gatos';
-            $sqlmax = "SELECT MAX(ID_ADOPCION) AS ID FROM ANIMAL_ADOPCION WHERE RAZA='". $this->raza . "'";
-            $response = $this->con->complexQuery($sqlmax);
-            echo print($sqlmax);
+            $this->show();
+        }
+        
+        function show(){
+            $sql = "SELECT * FROM ANIMAL_ADOPCION;";
+            $result = $this->con->complexQuery($sql);
+            
+            echo $json_response = json_encode($result);
+        }
+        
+        function getID($id){
+            if (is_numeric($id)) {
+                // code...
+                $sql = "SELECT * FROM ANIMAL_ADOPCION WHERE ID_ANIMAL_ADOPCION=" . $id;
+                $result = $this->con->complexQuery($sql);
+                
+                echo $json_response = json_encode($result);
+            }else{
+                echo null;
+            }
         }
         
         function add($request){
