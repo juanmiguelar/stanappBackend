@@ -28,16 +28,20 @@
         function show(){
             $sql = "SELECT * FROM DIRECCION;";
             $result = $this->con->complexQuery($sql);
+            $this->con->cerrarConexion();
             
             echo $json_response = json_encode($result);
         }
         
-        function getID($id){
+        function getID($request){
             
-            if (is_numeric($id)) {
+            $this->idDireccion = $request->id;
+            
+            if (is_numeric($this->idDireccion)) {
                 // code...
-                $sql = "SELECT * FROM DIRECCION WHERE ID_DIRECCION=" . $id;
+                $sql = "SELECT * FROM DIRECCION WHERE ID_DIRECCION=" . $this->idDireccion;
                 $result = $this->con->complexQuery($sql);
+                $this->con->cerrarConexion();
                 
                 echo $json_response = json_encode($result);
             }else{
@@ -56,9 +60,11 @@
             $result = $this->con->complexQuery($sqlwhere);
             
             $result = ereg_replace("'", "\"", $result[0]['ID']);  
+            
            
             //Si existe se devuelve su ID
             if($result != 0){
+                $this->con->cerrarConexion();
                 // Ya encontramos la dire
                 echo $result;
             }//Sino se crea la direccion y se devuelve el ID de la nueva direccion 
@@ -66,12 +72,12 @@
                 $sql ="INSERT INTO DIRECCION(LATITUD, LONGITUD) VALUES(". $this->latitud . ", ". $this->longitud . ");"; 
                 $result = $this->con->simpleQuery($sql);
                 $result = $this->con->complexQuery($sqlwhere);
+                $this->con->cerrarConexion();
                 
                 $result = ereg_replace("'", "\"", $result[0]['ID']);  
                 echo $result;
             }
         }
-        
         
     }
 

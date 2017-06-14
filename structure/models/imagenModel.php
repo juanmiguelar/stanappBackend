@@ -24,6 +24,7 @@
         function index(){
             $response = $this->con->complexQuery("SELECT NOW();");
             echo print_r($response);
+            $this->con->cerrarConexion();
         }
         
         function add($request){
@@ -34,6 +35,7 @@
             $sql ="INSERT INTO IMAGEN(ID_REPORTE, RUTA) VALUES('". $this->idReporte . "', '". $this->ruta . "')"; 
             
             return $this->con->simpleQuery($sql);
+            $this->con->cerrarConexion();
         }
         
     }

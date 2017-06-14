@@ -2,6 +2,7 @@
     require_once "connector.php";
 
     class AnimalMaltrato{
+        private $idMaltrato;
         private $especieMaltrato;
         private $raza;
         
@@ -25,18 +26,22 @@
         }
         
         function show(){
-            $sql = "SELECT * FROM ANIMAL_MALTRATO;";
+            $sql = "SELECT MAX(ID_MALTRATO) AS ID FROM ANIMAL_MALTRATO;";
             $result = $this->con->complexQuery($sql);
+            $this->con->cerrarConexion();
             
             echo $json_response = json_encode($result);
         }
         
-        function getID($id){
+        function getID($request){
             
-            if (is_numeric($id)) {
+            $this->idMaltrato = $request->id;
+            
+            if (is_numeric($this->idMaltrato)) {
                 // code...
-                $sql = "SELECT * FROM ANIMAL_MALTRATO WHERE ID_ANIMAL_MALTRATO=" . $id;
+                $sql = "SELECT * FROM ANIMAL_MALTRATO WHERE ID_ANIMAL_MALTRATO=" . $this->idMaltrato;
                 $result = $this->con->complexQuery($sql);
+                $this->con->cerrarConexion();
                 
                 echo $json_response = json_encode($result);
             }else{
@@ -52,6 +57,7 @@
             $sql ="INSERT INTO ANIMAL_MALTRATO(ESPECIE_MALTRATO, RAZA) VALUES('". $this->especieMaltrato . "', '". $this->raza . "')"; 
             
             $result = $this->con->simpleQuery($sql);
+            $this->con->cerrarConexion();
             
             if ($result) {
                 $sqlmax = "SELECT MAX(ID_MALTRATO) AS ID FROM ANIMAL_MALTRATO";

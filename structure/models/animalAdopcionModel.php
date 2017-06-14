@@ -2,6 +2,7 @@
     require_once "connector.php";
 
     class AnimalAdopcion{
+        private $idAdopcion;
         private $especieAdopcion;
         private $raza;
         private $edad;
@@ -30,15 +31,18 @@
         function show(){
             $sql = "SELECT * FROM ANIMAL_ADOPCION;";
             $result = $this->con->complexQuery($sql);
+            $this->con->cerrarConexion();
             
             echo $json_response = json_encode($result);
         }
         
-        function getID($id){
-            if (is_numeric($id)) {
+        function getID($request){
+            $this->idAdopcion = $request->id;
+            if (is_numeric($this->idAdopcion)) {
                 // code...
-                $sql = "SELECT * FROM ANIMAL_ADOPCION WHERE ID_ANIMAL_ADOPCION=" . $id;
+                $sql = "SELECT * FROM ANIMAL_ADOPCION WHERE ID_ANIMAL_ADOPCION=" . $this->idAdopcion;
                 $result = $this->con->complexQuery($sql);
+                $this->con->cerrarConexion();
                 
                 echo $json_response = json_encode($result);
             }else{
@@ -62,11 +66,14 @@
                 $sqlmax = "SELECT MAX(ID_ADOPCION) AS ID FROM ANIMAL_ADOPCION";
                 $idAdopcion = $this->con->complexQuery($sqlmax);;
                 $response =  ereg_replace("'", "\"", $idAdopcion[0]['ID']);
+                $this->con->cerrarConexion();
                 echo $response;
             }else{
                 $response = -1;
+                $this->con->cerrarConexion();
                 echo $response;
             }
+            
             
         }
         

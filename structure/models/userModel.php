@@ -27,6 +27,7 @@
         
         function index(){
             $response = $this->con->complexQuery("SELECT NOW();");
+            $this->con->cerrarConexion();
             echo print_r($response);
         }
         
@@ -41,9 +42,10 @@
             $sql ="INSERT INTO USUARIO(CORREO, CONTRASENNA, NOMBRE) VALUES('" . $this->correo . "', '" . $pass_encryp . "', '". $this->nombre . "')"; 
             
             if($this->con->simpleQuery($sql)){
-                
+                $this->con->cerrarConexion();
                  echo 1;
             }else{
+                $this->con->cerrarConexion();
                  echo 0;
             }
         }
@@ -53,20 +55,18 @@
             $this->correo = $request->email;
             $this->contrasenna = $request->password;
             //Consultar la contrasena
-            $sql ="SELECT COUNT(CORREO) AS CANTIDAD, CONTRASENNA, CORREO FROM USUARIO WHERE CORREO= '" . $this->correo . "' "; 
+            $sql ="SELECT CONTRASENNA, CORREO FROM USUARIO WHERE CORREO= '" . $this->correo . "' AND CONTRASENNA= '" . $this->nap->encryptIt($this->contrasenna) . "';"; 
             $usuario = $this->con->complexQuery($sql);
+            $this->con->cerrarConexion();
             
-            //Desencriptar
-            $pass_decryp =  $this->nap->decryptIt($usuario[0]["CONTRASENNA"]);
+            $cantidad = count($usuario);
             
-            
-            
-            if($this->contrasenna == $pass_decryp){
-                $usuario[0]["CONTRASENNA"] = 1;
-                echo $json_response = json_encode($usuario);
+            if ($cantidad == 1) {
+                echo 1;
             }else{
-                echo $json_response = json_encode($usuario);
+                echo 0;
             }
+            
         }
     }
 ?>

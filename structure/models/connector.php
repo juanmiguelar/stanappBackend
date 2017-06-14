@@ -14,13 +14,23 @@
             $this->con = new \mysqli($this->datos['host'], $this->datos['user'], $this->datos['pass'], $this->datos['db']);
         }
         
+        public function abrirConexion(){
+            $this->con = new \mysqli($this->datos['host'], $this->datos['user'], $this->datos['pass'], $this->datos['db']);
+        }
+        
+        public function cerrarConexion(){
+            $this->con->Close();
+        }
+        
         public function simpleQuery($sql){
+            $this->abrirConexion();
             $result = $this->con->query($sql);
             return $result;
         }
         
         public function complexQuery($sql){
             $myArray = array();
+            $this->abrirConexion();
             $datos = $this->con->query($sql);
             if ($datos === FALSE) {
                 echo "Error";
